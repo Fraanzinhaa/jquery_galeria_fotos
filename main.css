@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+}
+
+header {
+  background-color: #5f27cd;
+  padding: 16px 0;
+  color: #fff;
+  display: flex;
+  border-bottom: 16px solid #341f97;
+  justify-content: center;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+header button {
+  margin-left: 16px;
+}
+
+form {
+  background-color: #c8d6e5;
+  padding: 24px 0;
+  text-align: center;
+  display: none;
+}
+
+form h2 {
+  margin-bottom: 16px;
+}
+
+input, button {
+  padding: 8px;
+}
+
+button {
+  background-color: #009432;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+#botao-cancelar {
+  background-color: red;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap; /*quando chegar no limite e ocupar toda tela, irá criar uma nova linha*/
+}
+
+ul li {
+  max-width: 25%; /*aqui as imgs ficarão uma sobrepondo a outra e grande e usando o width 100% ela ajustara o tamanho*/
+  list-style: none; /*removendo as bolinhas preta que ficaram na img*/
+  position: relative; /*para que o texto nao saia da img*/
+  max-height: 280px; /*limitando a altura do li*/
+  overflow-y: hidden; /*aqui irá recortar toda img que estiver embaixo do li (limitado a 280px)*/
+}
+
+ul li img {
+  width: 100%; /**/
+}
+
+.overlay-img-link {
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute; /*posição inferior do li*/
+  bottom: 0; /*ficar na extremidade*/
+  left: 0;
+  width: 100%;
+  opacity: 0; /*removendo a escrita do ver img da imagem com opacidade 0*/
+  transition: all ease .5s; /*aplicando um efeito de transição para quando passar o mouse em cima da img, aparecer e desaparecer lentamente (0.5s) a escrita de ver img*/
+}
+
+.overlay-img-link a {
+  color: #fff;
+  text-decoration: none; /*removendo o underline*/
+}
+
+ul li:hover .overlay-img-link {
+  opacity: 1; /*quando passar o mouse em cima da img aparecerá a escrita*/
+}
